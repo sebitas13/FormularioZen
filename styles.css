@@ -28,6 +28,8 @@ section {
     overflow: hidden;
     position: relative;
     animation: animate 10s linear infinite; 
+   
+  
 }
 
 @keyframes animate {
@@ -59,11 +61,12 @@ section {
     border: 1px solid #7543a6;
     transition: .5s ease-in-out;
     position: absolute;
+    box-shadow: 0 0 20px #7543a6; 
 }
 
 .register:hover,
 .login:hover {
-    box-shadow: 0 0 20px #7543a6; 
+    box-shadow: 0 0 40px #7543a6; 
     transform: scale(1.02);
 }
 
@@ -152,17 +155,54 @@ button:hover {
 }
 
 section.active .login {
-    transform: translateX(-700px);
+    transform: translateX(-200%);
 }
 
 section.active .register {
-    transform: translateX(-600px);
+    transform: translateX(-180%);
 }
 
+@media (width<=800px){
+   
+    section.active .register {
+        transform: translateX(-150%);
+    }
+
+    
+
+}
 @media (width<=480px){
+
+    section.active .register {
+        transform: translateX(-130%);
+    }
    
     .register,
     .login{
-        width: 260px;
+        width: 350px;
+   }
+}
+
+@media (width<350px){
+
+    section.active .register {
+        transform: translateX(-135%);
+    }
+   
+    .register,
+    .login{
+        width: 300px;
+   }
+}
+
+@media (width<=280px){
+   
+    section.active .register {
+        transform: translateX(-160%);
+    }
+
+    .register,
+    .login{
+        width: 250px;
    }
 }
