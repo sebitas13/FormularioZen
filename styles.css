@@ -10,6 +10,7 @@ body {
     font-family:'Roboto',sans-serif;
     background-image: url('images/cyberpunk-7871605.webp');
     background-size: cover;
+    transition: 0.3s ease-out;
 }
 
 main{
@@ -17,19 +18,24 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 section {
     height: 700px;
     width: 800px;
+    /* height: 100%;
+    width: 100%; */
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content:  center ;
+    
     align-items: center;
-    overflow: hidden;
+    overflow: hidden   ;
+    background-color: rgb(128, 128, 128,0.2);
     position: relative;
     animation: animate 10s linear infinite; 
-   
-  
+    border-radius: 10px;
 }
 
 @keyframes animate {
@@ -57,11 +63,13 @@ section {
     margin: 1rem;
     border-radius: 10px;
     display: flex;
+    
     flex-direction: column;
     border: 1px solid #7543a6;
     transition: .5s ease-in-out;
     position: absolute;
     box-shadow: 0 0 20px #7543a6; 
+    
 }
 
 .register:hover,
@@ -70,9 +78,13 @@ section {
     transform: scale(1.02);
 }
 
+/* .login {
+    margin-top: 20rem;
+} */
+
 .register {
     height: 600px;
-    right: -400px;
+    top: 1200px;
 }
 
 
@@ -155,27 +167,32 @@ button:hover {
 }
 
 section.active .login {
-    transform: translateX(-200%);
+    transform: translateY(-200%);
+   
+
+}
+
+body.active {
+    background-image: url('images/cyberpunk-city.jpg');
+    background-size: cover;
 }
 
 section.active .register {
-    transform: translateX(-180%);
+    transform: translateY(-190%);
 }
 
 @media (width<=800px){
-   
+/*    
     section.active .register {
         transform: translateX(-150%);
     }
 
-    
-
+     */
+     
 }
 @media (width<=480px){
 
-    section.active .register {
-        transform: translateX(-130%);
-    }
+
    
     .register,
     .login{
@@ -183,11 +200,8 @@ section.active .register {
    }
 }
 
-@media (width<350px){
+@media (width<=350px){
 
-    section.active .register {
-        transform: translateX(-135%);
-    }
    
     .register,
     .login{
@@ -197,9 +211,7 @@ section.active .register {
 
 @media (width<=280px){
    
-    section.active .register {
-        transform: translateX(-160%);
-    }
+   
 
     .register,
     .login{
